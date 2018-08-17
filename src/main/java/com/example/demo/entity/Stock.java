@@ -17,10 +17,10 @@ public class Stock {
     @Column(name = "stock_name")
     private String stockName;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "stock")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL/*, mappedBy = "stock"*/)
     private StockDetails stockDetails;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "stock_category", catalog = "demo", joinColumns = {
             @JoinColumn(name = "stock_id", nullable = false, updatable = false)},
     inverseJoinColumns = {@JoinColumn(name = "category_id", nullable = false, updatable = false)})

@@ -17,8 +17,8 @@ public class Category {
     @Column(name = "details")
     private String details;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "categories")
-    private Set<Stock> stocks = new HashSet<>();
+    /*@ManyToMany(fetch = FetchType.EAGER, mappedBy = "categories")
+    private Set<Stock> stocks = new HashSet<>();*/
 
     public int getCategoryId() {
         return categoryId;
@@ -36,13 +36,13 @@ public class Category {
         this.name = name;
     }
 
-    public Set<Stock> getStocks() {
+    /*public Set<Stock> getStocks() {
         return stocks;
     }
 
     public void setStocks(Set<Stock> stocks) {
         this.stocks = stocks;
-    }
+    }*/
 
     public String getDetails() {
         return details;

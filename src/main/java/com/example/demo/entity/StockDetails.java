@@ -15,9 +15,9 @@ public class StockDetails {
     @Column(name = "remark")
     private String remark;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    /*@OneToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn
-    private Stock stock;
+    private Stock stock;*/
 
     public int getStockId() {
         return stockId;
@@ -43,11 +43,11 @@ public class StockDetails {
         this.remark = remark;
     }
 
-    public Stock getStock() {
+    /*public Stock getStock() {
         return stock;
     }
 
     public void setStock(Stock stock) {
         this.stock = stock;
-    }
+    }*/
 }

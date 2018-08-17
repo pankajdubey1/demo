@@ -18,4 +18,9 @@ public class StockDaoImpl implements StockDao{
     public void saveStock(Stock stock) {
         sessionFactory.getCurrentSession().save(stock);
     }
+
+    @Override
+    public Stock getStock(int stockId) {
+        return sessionFactory.getCurrentSession().get(Stock.class, new Integer(stockId));
+    }
 }

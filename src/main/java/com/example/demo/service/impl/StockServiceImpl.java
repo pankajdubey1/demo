@@ -16,4 +16,9 @@ public class StockServiceImpl implements StockService{
     public void createStock(Stock stock) {
         stockDao.saveStock(stock);
     }
+
+    @Override
+    public Stock getStock(int stockId) {
+        return stockDao.getStock(stockId);
+    }
 }
