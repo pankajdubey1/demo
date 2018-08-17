@@ -1,0 +1,71 @@
+#parse("email/macroTemplate.vm")
+
+<html>
+	<body>
+	 #msg("officeId.change.notify.mail.salutation")
+	<br/><br/>
+	#msg("officeId.change.notify.mail.text1") ${templateParam.officeId} #msg("officeId.change.notify.mail.text2") ${templateParam.agencyName} #msg("officeId.change.notify.mail.text3") ${templateParam.loggedInUserId} #msg("officeId.change.notify.mail.text4") ${templateParam.loggedInUserOffice} #msg("officeId.change.notify.mail.text5") ${templateParam.currentDate}. #msg("officeId.change.notify.mail.text6")
+	<br/><br/>
+	<table width="800" border="1" cellpadding="2">
+		<tr align="center" bgcolor="#A0A0A0">
+			<th>#msg("officeId.change.notify.mail.table.header1")</th>
+			<th>#msg("officeId.change.notify.mail.table.header2")</th>
+			<th>#msg("officeId.change.notify.mail.table.header3")</th>
+			<th>#msg("officeId.change.notify.mail.table.header4")</th>
+		</tr>
+		<tr>
+			<td align="center">1</td>
+			<td>#msg("officeId.change.notify.mail.table.attributeName1")</td>
+			<td>${templateParam.officeValueChangeMap.get("seriesRequest").getOldValue()}</td>
+			<td>${templateParam.officeValueChangeMap.get("seriesRequest").getNewValue()}</td>
+		</tr>
+		<tr>
+			<td align="center">2</td>
+			<td>#msg("officeId.change.notify.mail.table.attributeName2")</td>
+			<td>${templateParam.officeValueChangeMap.get("hrRequest").getOldValue()}</td>
+			<td>${templateParam.officeValueChangeMap.get("hrRequest").getNewValue()}</td>
+		</tr>
+		<tr>
+			<td align="center">3</td>
+			<td>#msg("officeId.change.notify.mail.table.attributeName3")</td>
+			<td>${templateParam.officeValueChangeMap.get("robpRequest").getOldValue()}</td>
+			<td>${templateParam.officeValueChangeMap.get("robpRequest").getNewValue()}</td>
+		</tr>
+		<tr>
+			<td align="center">4</td>
+			<td>#msg("officeId.change.notify.mail.table.attributeName4")</td>
+			<td>${templateParam.officeValueChangeMap.get("negoSpaceRequest").getOldValue()}</td>
+			<td>${templateParam.officeValueChangeMap.get("negoSpaceRequest").getNewValue()}</td>
+		</tr>
+		<tr>
+			<td align="center">5</td>
+			<td>#msg("officeId.change.notify.mail.table.attributeName5")</td>
+			<td>${templateParam.officeValueChangeMap.get("negoHalfReturnRequest").getOldValue()}</td>
+			<td>${templateParam.officeValueChangeMap.get("negoHalfReturnRequest").getNewValue()}</td>
+		</tr>
+		<tr>
+			<td align="center">6</td>
+			<td>#msg("officeId.change.notify.mail.table.attributeName6")</td>
+			<td>${templateParam.officeValueChangeMap.get("negoCodes").getOldValue()}</td>
+			<td>${templateParam.officeValueChangeMap.get("negoCodes").getNewValue()}</td>
+		</tr>
+		<tr>
+			<td align="center">7</td>
+			<td>#msg("officeId.change.notify.mail.table.attributeName7")</td>
+			<td>${templateParam.officeValueChangeMap.get("laterAdditionRequest").getOldValue()}</td>
+			<td>${templateParam.officeValueChangeMap.get("laterAdditionRequest").getNewValue()}</td>
+		</tr>
+		<tr paddin>
+			<td align="center">8</td>
+			<td>#msg("officeId.change.notify.mail.table.attributeName8")</td>
+			<td>${templateParam.officeValueChangeMap.get("feederCountries").getOldValue()}</td>
+			<td>${templateParam.officeValueChangeMap.get("feederCountries").getNewValue()}</td>
+		</tr>
+	</table>
+<br/><br/>
+#msg("officeId.change.notify.mail.signature.text1")
+<br/>
+#msg("officeId.change.notify.mail.signature.text2")
+
+</body>
+</html>
