@@ -15,7 +15,7 @@ public class EmpController {
     @Autowired
     private EmployeeService empService;
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/emp/{id}", method = RequestMethod.GET)
     public Employee getEmployee(@PathVariable int id) {
         return empService.getEmployee(id);
     }
